@@ -63,6 +63,16 @@ namespace CastleBetaForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BattleRoom {
+            get {
+                object obj = ResourceManager.GetObject("BattleRoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chick_24x24 {
             get {
                 object obj = ResourceManager.GetObject("chick_24x24", resourceCulture);
@@ -116,6 +126,16 @@ namespace CastleBetaForm.Properties {
         internal static System.Drawing.Bitmap Player {
             get {
                 object obj = ResourceManager.GetObject("Player", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShopRoom {
+            get {
+                object obj = ResourceManager.GetObject("ShopRoom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

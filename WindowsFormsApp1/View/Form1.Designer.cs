@@ -36,19 +36,16 @@ namespace CastleBetaForm
             this.buttonStart = new System.Windows.Forms.Button();
             this.timerGameStarted = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
             // 
             this.buttonStart.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonStart.CausesValidation = false;
-            this.buttonStart.Font = new System.Drawing.Font("Mistral", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            resources.ApplyResources(this.buttonStart, "buttonStart");
             this.buttonStart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonStart.Location = new System.Drawing.Point(345, 292);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(114, 49);
-            this.buttonStart.TabIndex = 0;
-            this.buttonStart.Text = "START";
             this.buttonStart.UseVisualStyleBackColor = false;
             // 
             // timerGameStarted
@@ -58,22 +55,28 @@ namespace CastleBetaForm
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
-            this.label1.TabIndex = 1;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.buttonExit, "buttonExit");
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // WorldView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 472);
+            this.ControlBox = false;
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStart);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.HelpButton = true;
             this.Name = "WorldView";
-            this.Text = "CastleIDDI";
             this.Load += new System.EventHandler(this.WorldView_Load);
             this.ResumeLayout(false);
 
@@ -85,6 +88,7 @@ namespace CastleBetaForm
         public System.Windows.Forms.Timer timerGameStarted;
         public System.Windows.Forms.Label label1;
         public Bitmap Skin = Resources.Player;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 

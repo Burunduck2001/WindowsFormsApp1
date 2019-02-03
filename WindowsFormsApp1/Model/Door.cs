@@ -12,7 +12,7 @@ namespace CastleBetaForm.Model
         public AbstractRoom To { get; set; }
         public int LocationX { get; set; }
         public int LocationY { get; set; }
-        public RigidBodyRec Size { get; set; }
+        public RigidBodyRec RigidBody { get; set; }
 
         public Door(AbstractRoom from, AbstractRoom to)
         {

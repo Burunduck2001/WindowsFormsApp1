@@ -16,19 +16,19 @@ namespace CastleBetaForm.Model
         public Door ToEast { get; set; }
         public Door ToSouth { get; set; }
         public Door ToWest { get; set; }
-        //Dictionary up=upRoom,down=downRoom,right=rightRoom,left=leftRoom
 
         //TODO Make random generation of room
         //TODO List of furnitures (mebel)
+
         int MEBELX = 3;
         int MEBELY = 3;
 
-        public AbstractRoom(AbstractRoom n, AbstractRoom w, AbstractRoom e, AbstractRoom s)
+        public AbstractRoom(AbstractRoom n, AbstractRoom e, AbstractRoom s, AbstractRoom w)
         {
             ToNorth =new Door(this,n);
-            ToWest = new Door(this, w);
             ToEast = new Door(this, e);
             ToSouth = new Door(this, s);
+            ToWest = new Door(this, w);
 
         }
         

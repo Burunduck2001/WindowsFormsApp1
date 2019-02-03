@@ -17,11 +17,13 @@ namespace CastleBetaForm.Model
         public CurrentWorld()
         {
             castle = new Castle();
-            castle.addRoom(new BattleRoom());
-            castle.addRoom(new BattleRoom());
-            castle.addRoom(new SpawnRoom(castle.Rooms[1], castle.Rooms[0], castle.Rooms[0], castle.Rooms[0]));
-            castle.addRoom(new BattleRoom());
-            player = new Player(castle.Rooms[2],350,150);
+            castle.addRoom(new BattleRoom(null,null,null,null));
+            castle.addRoom(new BattleRoom(null, null, null, null));
+            castle.addRoom(new BattleRoom(null, null, null, null));
+            castle.addRoom(new ShopRoom(null, null, null, null));
+            castle.addRoom(new SpawnRoom(castle.Rooms[3], castle.Rooms[1], null, castle.Rooms[2]));
+            
+            player = new Player(castle.Rooms[4],350,150);
         }
 
     }

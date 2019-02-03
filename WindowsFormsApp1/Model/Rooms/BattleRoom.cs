@@ -18,9 +18,14 @@ namespace CastleBetaForm.Model.Rooms
             
         }
 
-        public BattleRoom()
+        public BattleRoom(AbstractRoom n, AbstractRoom e, AbstractRoom s, AbstractRoom w) : base(n, e, s, w)
         {
-            Background = Resources.MainBackGround;
+            Background = Resources.BattleRoom;
+            ToNorth.RigidBody = null;
+            ToEast.RigidBody = null;
+            ToWest.RigidBody = null;
+            ToSouth.RigidBody = null;
+
         }
 
 

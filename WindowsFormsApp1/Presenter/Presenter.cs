@@ -127,23 +127,7 @@ namespace CastleBetaForm.Presenter
                 await Task.Run(() => World.player.MoveTo(ClickX, ClickY, World.player.ISMoving));
                 World.player.ISMoving = false;
             }
-
-
-            //Проверка, есть ли рядом нпс
-            foreach (NPC nPC in World.player.CurrentRoom.NPCs)
-            {
-                //Меняем цвет отрисовки нпс, если игрок рядом
-                if ((Math.Abs(nPC.LocationX-World.player.LocationX)<20) && (Math.Abs(nPC.LocationY - World.player.LocationY) < 20))
-                {
-                    nPC.Talk();
-                    
-                   
-                }
-                
-
-            }   
         }
-
 
 
 
@@ -159,15 +143,25 @@ namespace CastleBetaForm.Presenter
         {
             //View.label1.Text = ((int)World.player.LocationX).ToString() + "   " + ((int)World.player.LocationY).ToString();
             
-            if (!f)
+            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToNorth.RigidBody))
             {
-                if ((World.player.RigidBody.LocationX == World.player.CurrentRoom.ToNorth.LocationX))
-                {
-                    World.player.CurrentRoom = World.player.CurrentRoom.ToNorth.To;
-                    f = true;
-                       
-                }
+                World.player.CurrentRoom = World.player.CurrentRoom.ToNorth.To;
                 
+            }
+            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToEast.RigidBody))
+            {
+                World.player.CurrentRoom = World.player.CurrentRoom.ToEast.To;
+
+            }
+            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToSouth.RigidBody))
+            {
+                World.player.CurrentRoom = World.player.CurrentRoom.ToSouth.To;
+
+            }
+            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToWest.RigidBody))
+            {
+                World.player.CurrentRoom = World.player.CurrentRoom.ToWest.To;
+
             }
         }
 #endif
