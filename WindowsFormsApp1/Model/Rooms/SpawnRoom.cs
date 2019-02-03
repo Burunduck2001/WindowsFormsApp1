@@ -33,7 +33,7 @@ namespace CastleBetaForm.Model.Rooms
         {
             ToNorth.RigidBody = new RigidBodyRec(270, 1, 50, 50);
             ToEast.RigidBody = new RigidBodyRec(765, 240, 50, 50);
-
+            ToWest.RigidBody = new RigidBodyRec(0, 270, 50, 70);
 
         }
     }

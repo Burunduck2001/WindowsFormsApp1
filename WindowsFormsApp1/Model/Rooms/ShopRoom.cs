@@ -19,7 +19,7 @@ namespace CastleBetaForm.Model.Rooms
 
         public override void SetDoors()
         {
-            ToNorth.RigidBody = new RigidBodyRec(390, 1, 50, 50);
+            ToSouth.RigidBody = new RigidBodyRec(390, 1, 50, 50);
         }
 
     }

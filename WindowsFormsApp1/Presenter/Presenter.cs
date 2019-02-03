@@ -154,35 +154,39 @@ namespace CastleBetaForm.Presenter
 
             if (World.player.CurrentRoom.ToNorth != null)
             {
-                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToNorth.RigidBody))
+                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToNorth.RigidBody) & !(World.player.ISMoving))
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToNorth.To;
-
+                    World.player.LocationX = World.player.CurrentRoom.ToSouth.RigidBody.LocationX;
+                    World.player.LocationY = World.player.CurrentRoom.ToSouth.RigidBody.LocationY- World.player.CurrentRoom.ToSouth.RigidBody.Height-1;
                 }
             }
             if (World.player.CurrentRoom.ToEast != null)
             {
-                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToEast.RigidBody))
+                if ((RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToEast.RigidBody)) & !(World.player.ISMoving))
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToEast.To;
-
+                    World.player.LocationX = World.player.CurrentRoom.ToWest.RigidBody.LocationX + World.player.CurrentRoom.ToWest.RigidBody.Width + 1;
+                    World.player.LocationY = World.player.CurrentRoom.ToWest.RigidBody.LocationY;
                 }
             }
 
             if (World.player.CurrentRoom.ToSouth != null)
             {
-                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToSouth.RigidBody))
+                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToSouth.RigidBody) & !(World.player.ISMoving))
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToSouth.To;
-
+                    World.player.LocationX = World.player.CurrentRoom.ToNorth.RigidBody.LocationX;
+                    World.player.LocationY = World.player.CurrentRoom.ToNorth.RigidBody.LocationY + World.player.CurrentRoom.ToNorth.RigidBody.Height + 1;
                 }
             }
             if (World.player.CurrentRoom.ToWest != null)
             {
-                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToWest.RigidBody))
+                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToWest.RigidBody) & !(World.player.ISMoving))
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToWest.To;
-
+                    World.player.LocationX = World.player.CurrentRoom.ToEast.RigidBody.LocationX - World.player.CurrentRoom.ToEast.RigidBody.Width - 1;
+                    World.player.LocationY = World.player.CurrentRoom.ToEast.RigidBody.LocationY;
                 }
             }
 

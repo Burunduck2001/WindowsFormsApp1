@@ -27,7 +27,7 @@ namespace CastleBetaForm.Model
             //Set Connections
             //Spawn - Shop 
             castle.Rooms[4].ToNorth = new Door(castle.Rooms[4], castle.Rooms[3]);
-            castle.Rooms[3].ToNorth = new Door(castle.Rooms[3], castle.Rooms[4]);
+            castle.Rooms[3].ToSouth = new Door(castle.Rooms[3], castle.Rooms[4]);
 
             //Spawn - Battle[0] 
             castle.Rooms[4].ToEast = new Door(castle.Rooms[4], castle.Rooms[0]);

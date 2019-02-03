@@ -10,8 +10,8 @@ namespace CastleBetaForm.Model
     {
         public decimal LocationX { get; set; }
         public decimal LocationY { get; set; }
-        decimal Height { get; set; }
-        decimal Width { get; set; }
+        public decimal Height { get; set; }
+        public decimal Width { get; set; }
 
         public RigidBodyRec(decimal objX, decimal objY, decimal objWidth, decimal objHeight)
         {
