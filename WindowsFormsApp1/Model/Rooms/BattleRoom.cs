@@ -1,6 +1,7 @@
 ﻿using CastleBetaForm.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace CastleBetaForm.Model.Rooms
             
         }
 
-        public BattleRoom()
+        public BattleRoom(Bitmap BCK):base()
         {
-            this.Background = Resources.BattleRoom;
+            this.Background = BCK;
         }
 
         public override void SetDoors()

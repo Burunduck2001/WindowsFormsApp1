@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CastleBetaForm.Model.Mobs;
 using CastleBetaForm.Model.Rooms;
+using CastleBetaForm.Properties;
 
 namespace CastleBetaForm.Model
 {
@@ -18,9 +19,9 @@ namespace CastleBetaForm.Model
         public CurrentWorld()
         {
             castle = new Castle();
-            castle.addRoom(new BattleRoom());
-            castle.addRoom(new BattleRoom());
-            castle.addRoom(new BattleRoom());
+            castle.addRoom(new BattleRoom(Resources.BattleRoomLeftUp));
+            castle.addRoom(new BattleRoom(Resources.BattleRoomDown));
+            castle.addRoom(new BattleRoom(Resources.BattleRoomRight));
             castle.addRoom(new ShopRoom());
             castle.addRoom(new SpawnRoom());
             //Set Connections
@@ -44,8 +45,8 @@ namespace CastleBetaForm.Model
             ((SpawnRoom)(castle.Rooms[4])).SetDoors();
             ((ShopRoom)(castle.Rooms[3])).SetDoors();
             ((BattleRoom)(castle.Rooms[0])).SetDoors();
-            //((BattleRoom)(castle.Rooms[1])).SetDoors(); 
-            // ((BattleRoom)(castle.Rooms[2])).SetDoors();
+            ((BattleRoom)(castle.Rooms[1])).SetDoors(); 
+            ((BattleRoom)(castle.Rooms[2])).SetDoors();
 
             player = new Player(castle.Rooms[4],350,150);
         }
