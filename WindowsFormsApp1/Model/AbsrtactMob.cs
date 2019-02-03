@@ -66,6 +66,8 @@ namespace CastleBetaForm.Model
                             while (LocationX < x)
                             {
                                 LocationX -= Speed;
+                                RigidBody.LocationX = this.LocationX;
+                                RigidBody.LocationY = this.LocationY;
                                 Thread.Sleep(20);
 
                                 Movedest = MoveDest.MoveLEFT;
@@ -76,6 +78,8 @@ namespace CastleBetaForm.Model
                             while (LocationX > x)
                             {
                                 LocationX += Speed;
+                                RigidBody.LocationX = this.LocationX;
+                                RigidBody.LocationY = this.LocationY;
                                 Thread.Sleep(20);
 
                                 Movedest = MoveDest.MoveRIGHT;
@@ -91,6 +95,8 @@ namespace CastleBetaForm.Model
 
                             LocationX += Speed;
                             LocationY = (k * (x - LocationX)) + y;
+                            RigidBody.LocationX = this.LocationX;
+                            RigidBody.LocationY = this.LocationY;
                             Thread.Sleep(20);
 
                             Movedest = MoveDest.MoveRIGHT;
@@ -103,6 +109,8 @@ namespace CastleBetaForm.Model
 
                             LocationX -= Speed;
                             LocationY = (k * (x - LocationX)) + y;
+                            RigidBody.LocationX = this.LocationX;
+                            RigidBody.LocationY = this.LocationY;
                             Thread.Sleep(20);
 
                             Movedest = MoveDest.MoveLEFT;
@@ -122,6 +130,8 @@ namespace CastleBetaForm.Model
                             while (LocationY > y)
                             {
                                 LocationY -= Speed;
+                                RigidBody.LocationX = this.LocationX;
+                                RigidBody.LocationY = this.LocationY;
                                 Thread.Sleep(20);
 
                                 Movedest = MoveDest.MoveUP;
@@ -132,6 +142,8 @@ namespace CastleBetaForm.Model
                             while (LocationY < y)
                             {
                                 LocationY += Speed;
+                                RigidBody.LocationX = this.LocationX;
+                                RigidBody.LocationY = this.LocationY;
                                 Thread.Sleep(20);
                                 Movedest = MoveDest.MoveDOWN;
                             }
@@ -145,6 +157,8 @@ namespace CastleBetaForm.Model
 
                             LocationY += Speed;
                             LocationX = (k * (y - LocationY)) + x;
+                            RigidBody.LocationX = this.LocationX;
+                            RigidBody.LocationY = this.LocationY;
                             Thread.Sleep(20);
                             Movedest = MoveDest.MoveDOWN;
                         }
@@ -156,6 +170,8 @@ namespace CastleBetaForm.Model
                         {
                             LocationY -= Speed;
                             LocationX = (k * (y - LocationY)) + x;
+                            RigidBody.LocationX = this.LocationX;
+                            RigidBody.LocationY = this.LocationY;
                             Thread.Sleep(20);
 
                             Movedest = MoveDest.MoveUP;
@@ -168,8 +184,7 @@ namespace CastleBetaForm.Model
 
             }
 
-            RigidBody.LocationX = this.LocationX;
-            RigidBody.LocationY = this.LocationY;
+
 
 
 
