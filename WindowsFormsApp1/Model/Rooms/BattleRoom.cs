@@ -23,7 +23,10 @@ namespace CastleBetaForm.Model.Rooms
             this.Background = Resources.BattleRoom;
         }
 
-
+        public override void SetDoors()
+        {
+            ToWest.RigidBody = new RigidBodyRec(1, 250, 50, 50);
+        }
 
 
     }

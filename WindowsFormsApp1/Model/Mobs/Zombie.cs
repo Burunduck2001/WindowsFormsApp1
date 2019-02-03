@@ -17,10 +17,12 @@ namespace CastleBetaForm.Model.Mobs
             Speed = (decimal)0.5;
             WidthOfImage = 32;
             HeightOfImage = 41;
+            RigidBody = new RigidBodyRec(spawnx, spawny, WidthOfImage, HeightOfImage);
             CoordsOfImage = new List<int>{0, 215, 32, 215, 64, 215, 32, 215,
                                         0, 151, 32, 151, 64, 151, 32, 151,
                                         0, 23, 33, 23, 65, 23, 33, 23,
                                         0, 87, 32, 87, 64 , 87, 32, 87};
+            
         }
     }
 }

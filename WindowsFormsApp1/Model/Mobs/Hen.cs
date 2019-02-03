@@ -18,6 +18,7 @@ namespace CastleBetaForm.Model.Mobs
             Speed =(decimal)2;
             WidthOfImage = 25;
             HeightOfImage = 23;
+            RigidBody = new RigidBodyRec(spawnx, spawny, WidthOfImage, HeightOfImage);
             CoordsOfImage = new List<int> {16, 45, 64, 43, 112, 45, 64, 43, 13, 109, 61, 107,
                      109, 109, 61, 107, 16, 173, 64, 171, 112, 173,64, 171, 11, 237, 61, 235, 107, 237, 61, 235};
 

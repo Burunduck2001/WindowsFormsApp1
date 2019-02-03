@@ -142,5 +142,17 @@
   <ItemGroup>
     <None Include="Resources\ZombieAndSkeleton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BattleRoom4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BattleRoomDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BattleRoomLeftUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BattleRoomUpDown.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

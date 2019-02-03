@@ -15,7 +15,7 @@ namespace CastleBetaForm.Presenter
 {
     public class MyPresenter
     {
-       
+
         CurrentWorld World { get; set; }
         WorldView View { get; set; }
         bool GameStarted = false;
@@ -58,18 +58,18 @@ namespace CastleBetaForm.Presenter
             GameStarted = true;
             View.timerGameStarted.Start();
             View.Refresh();
-            
+
 
         }
 
-        protected  void paint(object sender, PaintEventArgs e)
+        protected void paint(object sender, PaintEventArgs e)
         {
 
             Graphics dc = e.Graphics;
-         
-         
-            int xhelper=0;
-            int yhelper=0;
+
+
+            int xhelper = 0;
+            int yhelper = 0;
             int xhelperMob = 0;
             int yhelperMob = 0;
             World.player.CheckedDest(ref xhelper, ref yhelper);
@@ -85,7 +85,7 @@ namespace CastleBetaForm.Presenter
 
 
                 }
-              
+
                 else
                 {
                     View.paintPlayerStay(this, dc, World.player.CurrentRoom.Background, (int)World.player.LocationX,
@@ -95,15 +95,15 @@ namespace CastleBetaForm.Presenter
                 foreach (AbstractMob mob in World.player.CurrentRoom.Mobs)
                 {
                     mob.CheckedDest(ref xhelperMob, ref yhelperMob);
-                    View.paintMob(this, dc,(int)mob.LocationX, (int)mob.LocationY, mob.WidthOfImage,
+                    View.paintMob(this, dc, (int)mob.LocationX, (int)mob.LocationY, mob.WidthOfImage,
                     mob.HeightOfImage, xhelperMob, yhelperMob, mob.Skin);
                     if (!mob.IsMoving)
-                    { 
-                    Task.Run(() => mob.MoveTo(mob.RandomX(0, View.Width - mob.WidthOfImage), mob.RandomY
-                    (0, View.Height - mob.HeightOfImage), View.Width, View.Height));
+                    {
+                        Task.Run(() => mob.MoveTo(mob.RandomX(0, View.Width - mob.WidthOfImage), mob.RandomY
+                        (0, View.Height - mob.HeightOfImage), View.Width, View.Height));
 
                     }
-                    
+
 
                 }
 
@@ -150,8 +150,8 @@ namespace CastleBetaForm.Presenter
 
                 }
             }
-            if( World.player.CurrentRoom.ToEast != null)
-            { 
+            if (World.player.CurrentRoom.ToEast != null)
+            {
                 if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToEast.RigidBody))
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToEast.To;
@@ -175,9 +175,17 @@ namespace CastleBetaForm.Presenter
 
                 }
             }
-        }
+
+            foreach (AbstractMob mob in World.player.CurrentRoom.Mobs)
+            {
+                if (RigidBodyRec.Check(World.player.RigidBody, mob.RigidBody))
+                {
+                    MessageBox.Show("Ауч");
+                }
+            }
 #endif
 
-        
+
+        }
     }
 }

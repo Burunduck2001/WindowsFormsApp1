@@ -73,6 +73,46 @@ namespace CastleBetaForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BattleRoom4 {
+            get {
+                object obj = ResourceManager.GetObject("BattleRoom4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleRoomDown {
+            get {
+                object obj = ResourceManager.GetObject("BattleRoomDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleRoomLeftUp {
+            get {
+                object obj = ResourceManager.GetObject("BattleRoomLeftUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleRoomUpDown {
+            get {
+                object obj = ResourceManager.GetObject("BattleRoomUpDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chick_24x24 {
             get {
                 object obj = ResourceManager.GetObject("chick_24x24", resourceCulture);

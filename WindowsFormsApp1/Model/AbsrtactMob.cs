@@ -29,6 +29,7 @@ namespace CastleBetaForm.Model
         Random rng = new Random(DateTime.Now.Millisecond);
         public Bitmap Skin { get; set; }
         public bool IsMoving { get; set; }
+        public RigidBodyRec RigidBody { get; set; }
         //Stats //Hp,Exp,Mana,Gold
         //StatsofPower:STR,INT,AGI
 
@@ -167,9 +168,10 @@ namespace CastleBetaForm.Model
 
             }
 
+            RigidBody.LocationX = this.LocationX;
+            RigidBody.LocationY = this.LocationY;
 
-     
-            
+
 
         }
 
