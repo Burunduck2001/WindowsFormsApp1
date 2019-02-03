@@ -37,7 +37,9 @@ namespace CastleBetaForm.Model
             CurrentRoom = SpawnPoint;
             LocationX = x;
             LocationY = y;
-            Speed = (decimal)10;
+
+            Speed = (decimal)5;
+
             ISMoving = false;
           
 
