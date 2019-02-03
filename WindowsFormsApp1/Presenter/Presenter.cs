@@ -141,7 +141,17 @@ namespace CastleBetaForm.Presenter
 
         public void Timer_tick(object sender, EventArgs e)
         {
-            //View.label1.Text = ((int)World.player.LocationX).ToString() + "   " + ((int)World.player.LocationY).ToString();
+            CheckDoorsRB();
+            CheckMobsRB();
+#endif      
+
+            
+
+        }
+
+        public void CheckDoorsRB()
+        {
+
             if (World.player.CurrentRoom.ToNorth != null)
             {
                 if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToNorth.RigidBody))
@@ -177,28 +187,30 @@ namespace CastleBetaForm.Presenter
             }
 
 
-             foreach (AbstractMob mob in World.player.CurrentRoom.Mobs)
+
+        }
+            
+        public void CheckMobsRB()
+        {
+            foreach (AbstractMob mob in World.player.CurrentRoom.Mobs)
             {
                 Task task = new Task(() =>
                 {
-                   if (RigidBodyRec.Check(World.player.RigidBody, mob.RigidBody))
+                    if (RigidBodyRec.Check(World.player.RigidBody, mob.RigidBody))
                     {
 
                         MessageBox.Show("Ауч");
 
                         //Started Fight
-                        
+
                     }
-                    
+
 
                 });
                 task.Start();
                 task.Wait(1000);
-               
+
             };
-#endif      
-
-
         }
     }
 }
