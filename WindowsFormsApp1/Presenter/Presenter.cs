@@ -19,7 +19,7 @@ namespace CastleBetaForm.Presenter
         CurrentWorld World { get; set; }
         WorldView View { get; set; }
         bool GameStarted = false;
-        bool f = false;
+        
 
         SolidBrush s = new SolidBrush(Color.Black);
 
@@ -36,10 +36,8 @@ namespace CastleBetaForm.Presenter
             View.buttonStart.Click += buttonStart_Click;
             View.Paint += paint;
             View.MouseClick += MouseClicked;
-
-#if Debug
-
             View.timerGameStarted.Tick += Timer_tick;
+#if Debug
             View.MouseMove += MouseMoved;
 #endif
 
@@ -138,19 +136,20 @@ namespace CastleBetaForm.Presenter
 
 
         }
-
+#endif
         public void Timer_tick(object sender, EventArgs e)
         {
+            
+            
             CheckDoorsRB();
             CheckMobsRB();
-#endif      
 
-            
 
         }
 
         public void CheckDoorsRB()
         {
+          
 
             if (World.player.CurrentRoom.ToNorth != null)
             {
@@ -158,7 +157,9 @@ namespace CastleBetaForm.Presenter
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToNorth.To;
                     World.player.LocationX = World.player.CurrentRoom.ToSouth.RigidBody.LocationX;
-                    World.player.LocationY = World.player.CurrentRoom.ToSouth.RigidBody.LocationY- World.player.CurrentRoom.ToSouth.RigidBody.Height-1;
+                    World.player.LocationY = World.player.CurrentRoom.ToSouth.RigidBody.LocationY - World.player.CurrentRoom.ToSouth.RigidBody.Height - World.player.RigidBody.Height;
+                    World.player.RigidBody.LocationX = World.player.LocationX;
+                    World.player.RigidBody.LocationY = World.player.LocationY;
                 }
             }
             if (World.player.CurrentRoom.ToEast != null)
@@ -166,8 +167,11 @@ namespace CastleBetaForm.Presenter
                 if ((RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToEast.RigidBody)) & !(World.player.ISMoving))
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToEast.To;
-                    World.player.LocationX = World.player.CurrentRoom.ToWest.RigidBody.LocationX + World.player.CurrentRoom.ToWest.RigidBody.Width + 1;
+                    World.player.LocationX = World.player.CurrentRoom.ToWest.RigidBody.LocationX + World.player.CurrentRoom.ToWest.RigidBody.Width + World.player.RigidBody.Width;
                     World.player.LocationY = World.player.CurrentRoom.ToWest.RigidBody.LocationY;
+                    World.player.RigidBody.LocationX = World.player.LocationX;
+                    World.player.RigidBody.LocationY = World.player.LocationY;
+
                 }
             }
 
@@ -177,7 +181,9 @@ namespace CastleBetaForm.Presenter
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToSouth.To;
                     World.player.LocationX = World.player.CurrentRoom.ToNorth.RigidBody.LocationX;
-                    World.player.LocationY = World.player.CurrentRoom.ToNorth.RigidBody.LocationY + World.player.CurrentRoom.ToNorth.RigidBody.Height + 1;
+                    World.player.LocationY = World.player.CurrentRoom.ToNorth.RigidBody.LocationY + World.player.CurrentRoom.ToNorth.RigidBody.Height + World.player.RigidBody.Height;
+                    World.player.RigidBody.LocationX = World.player.LocationX;
+                    World.player.RigidBody.LocationY = World.player.LocationY;
                 }
             }
             if (World.player.CurrentRoom.ToWest != null)
@@ -185,15 +191,20 @@ namespace CastleBetaForm.Presenter
                 if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToWest.RigidBody) & !(World.player.ISMoving))
                 {
                     World.player.CurrentRoom = World.player.CurrentRoom.ToWest.To;
-                    World.player.LocationX = World.player.CurrentRoom.ToEast.RigidBody.LocationX - World.player.CurrentRoom.ToEast.RigidBody.Width - 1;
+                    World.player.LocationX = World.player.CurrentRoom.ToEast.RigidBody.LocationX - World.player.CurrentRoom.ToEast.RigidBody.Width - World.player.RigidBody.Width;
                     World.player.LocationY = World.player.CurrentRoom.ToEast.RigidBody.LocationY;
+                    World.player.RigidBody.LocationX = World.player.LocationX;
+                    World.player.RigidBody.LocationY = World.player.LocationY;
+
                 }
             }
+            
+
 
 
 
         }
-            
+
         public void CheckMobsRB()
         {
             foreach (AbstractMob mob in World.player.CurrentRoom.Mobs)
@@ -204,7 +215,7 @@ namespace CastleBetaForm.Presenter
                     {
 
                         MessageBox.Show("Ауч");
-
+                        
                         //Started Fight
 
                     }
@@ -215,6 +226,7 @@ namespace CastleBetaForm.Presenter
                
 
             };
+            
         }
     }
 }

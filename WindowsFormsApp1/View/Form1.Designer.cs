@@ -50,7 +50,7 @@ namespace CastleBetaForm
             // 
             // timerGameStarted
             // 
-            this.timerGameStarted.Interval = 50;
+            this.timerGameStarted.Interval = 20;
             this.timerGameStarted.Tick += new System.EventHandler(this.timerGameStarted_Tick);
             // 
             // label1

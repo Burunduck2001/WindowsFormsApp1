@@ -48,6 +48,29 @@ namespace CastleBetaForm.Model
             ((BattleRoom)(castle.Rooms[1])).SetDoors(); 
             ((BattleRoom)(castle.Rooms[2])).SetDoors();
 
+
+            //Add mobs
+            castle.Rooms[0].addMob(new Zombie(40, 400));
+            castle.Rooms[0].addMob(new Zombie(400, 40));
+            castle.Rooms[0].addMob(new Zombie(110, 300));
+            castle.Rooms[0].addMob(new Zombie(400, 400));
+            castle.Rooms[0].addMob(new Zombie(500, 600));
+            castle.Rooms[0].addMob(new Zombie(150, 20));
+
+            castle.Rooms[1].addMob(new Skeleton(40, 320));
+            castle.Rooms[1].addMob(new Skeleton(300, 200));
+            castle.Rooms[1].addMob(new Skeleton(500, 100));
+            castle.Rooms[1].addMob(new Zombie(60, 600));
+            castle.Rooms[1].addMob(new Zombie(20, 40));
+            castle.Rooms[1].addMob(new Zombie(400, 400));
+
+            castle.Rooms[2].addMob(new Skeleton(450, 20));
+            castle.Rooms[2].addMob(new Skeleton(100, 500));
+            castle.Rooms[2].addMob(new Skeleton(300, 140));
+            castle.Rooms[2].addMob(new Skeleton(500, 20));
+            castle.Rooms[2].addMob(new Skeleton(130, 380));
+            castle.Rooms[2].addMob(new Skeleton(120, 470));
+
             player = new Player(castle.Rooms[4],350,150);
         }
 
