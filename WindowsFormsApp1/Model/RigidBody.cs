@@ -13,7 +13,7 @@ namespace CastleBetaForm.Model
         decimal Height { get; set; }
         decimal Width { get; set; }
 
-        public RigidBodyRec(decimal objX, decimal objY, decimal objHeight, decimal objWidth)
+        public RigidBodyRec(decimal objX, decimal objY, decimal objWidth, decimal objHeight)
         {
             LocationX = objX;
             LocationY = objY;

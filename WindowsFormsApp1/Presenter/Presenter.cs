@@ -176,22 +176,26 @@ namespace CastleBetaForm.Presenter
                 }
             }
 
-           Task task = new Task(()=>
-           {
-               foreach (AbstractMob mob in World.player.CurrentRoom.Mobs)
-               {
+
+             foreach (AbstractMob mob in World.player.CurrentRoom.Mobs)
+            {
+                Task task = new Task(() =>
+                {
                    if (RigidBodyRec.Check(World.player.RigidBody, mob.RigidBody))
-                   {
+                    {
 
-                       MessageBox.Show("Ауч");
-                       task.Wait(200);
-                       //Started Fight
+                        MessageBox.Show("Ауч");
 
-                   }
+                        //Started Fight
+                        
+                    }
+                    
 
-
-               }
-           });
+                });
+                task.Start();
+                task.Wait(1000);
+               
+            };
 #endif      
 
 
