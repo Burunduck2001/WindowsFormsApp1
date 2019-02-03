@@ -1,4 +1,5 @@
-﻿using CastleBetaForm.Properties;
+﻿using CastleBetaForm.Model.Mobs;
+using CastleBetaForm.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace CastleBetaForm.Model.Rooms
         public ShopRoom()
         {
             this.Background = Resources.ShopRoom;
+            addMob(new Zombie(100, 100));
+            addMob(new Skeleton(200, 200));
         }
 
         public override void SetDoors()
