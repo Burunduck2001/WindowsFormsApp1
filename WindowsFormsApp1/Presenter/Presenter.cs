@@ -142,26 +142,38 @@ namespace CastleBetaForm.Presenter
         public void Timer_tick(object sender, EventArgs e)
         {
             //View.label1.Text = ((int)World.player.LocationX).ToString() + "   " + ((int)World.player.LocationY).ToString();
-            
-            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToNorth.RigidBody))
+            if (World.player.CurrentRoom.ToNorth != null)
             {
-                World.player.CurrentRoom = World.player.CurrentRoom.ToNorth.To;
-                
-            }
-            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToEast.RigidBody))
-            {
-                World.player.CurrentRoom = World.player.CurrentRoom.ToEast.To;
+                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToNorth.RigidBody))
+                {
+                    World.player.CurrentRoom = World.player.CurrentRoom.ToNorth.To;
 
+                }
             }
-            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToSouth.RigidBody))
-            {
-                World.player.CurrentRoom = World.player.CurrentRoom.ToSouth.To;
+            if( World.player.CurrentRoom.ToEast != null)
+            { 
+                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToEast.RigidBody))
+                {
+                    World.player.CurrentRoom = World.player.CurrentRoom.ToEast.To;
 
+                }
             }
-            if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToWest.RigidBody))
-            {
-                World.player.CurrentRoom = World.player.CurrentRoom.ToWest.To;
 
+            if (World.player.CurrentRoom.ToSouth != null)
+            {
+                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToSouth.RigidBody))
+                {
+                    World.player.CurrentRoom = World.player.CurrentRoom.ToSouth.To;
+
+                }
+            }
+            if (World.player.CurrentRoom.ToWest != null)
+            {
+                if (RigidBodyRec.Check(World.player.RigidBody, World.player.CurrentRoom.ToWest.RigidBody))
+                {
+                    World.player.CurrentRoom = World.player.CurrentRoom.ToWest.To;
+
+                }
             }
         }
 #endif

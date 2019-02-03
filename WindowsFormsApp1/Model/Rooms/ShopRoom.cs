@@ -9,15 +9,15 @@ namespace CastleBetaForm.Model.Rooms
 {
     class ShopRoom : AbstractRoom
     {
-        public ShopRoom(AbstractRoom n, AbstractRoom e, AbstractRoom s, AbstractRoom w) : base(n, e, s, w)
+        public ShopRoom()
         {
-            Background = Resources.ShopRoom;
-            ToNorth.RigidBody = null;
-            ToEast.RigidBody = null;
-            ToWest.RigidBody = null;
-            ToSouth.RigidBody = null;
-            //addNPC(new NPC("Merchant May",30,30,));
-
+            this.Background = Resources.ShopRoom;
         }
+
+        public override void SetDoors()
+        {
+            ToNorth.RigidBody = new RigidBodyRec(390, 1, 50, 50);
+        }
+
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CastleBetaForm.Model
 {
-    public abstract class AbstractRoom
+    public abstract class AbstractRoom:Connection
     {
         public List<AbstractMob> Mobs = new List<AbstractMob> { };
         public Bitmap Background { get; set; }
@@ -23,14 +23,6 @@ namespace CastleBetaForm.Model
         int MEBELX = 3;
         int MEBELY = 3;
 
-        public AbstractRoom(AbstractRoom n, AbstractRoom e, AbstractRoom s, AbstractRoom w)
-        {
-            ToNorth =new Door(this,n);
-            ToEast = new Door(this, e);
-            ToSouth = new Door(this, s);
-            ToWest = new Door(this, w);
-
-        }
         
         public AbstractRoom()
         {
@@ -47,6 +39,9 @@ namespace CastleBetaForm.Model
             Mobs.Add(mob);
         }
 
-
+        public virtual void SetDoors()
+        {
+           
+        }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Connection.cs" />
     <Compile Include="Model\Door.cs" />
     <Compile Include="Model\RigidBody.cs" />
     <Compile Include="Presenter\Presenter.cs" />
