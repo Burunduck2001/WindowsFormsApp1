@@ -208,7 +208,7 @@ namespace CastleBetaForm.Presenter
 
                 });
                 task.Start();
-                task.Wait(1000);
+               
 
             };
         }
