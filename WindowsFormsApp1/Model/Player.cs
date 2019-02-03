@@ -38,7 +38,10 @@ namespace CastleBetaForm.Model
             LocationX = x;
             LocationY = y;
 
-            Speed = (decimal)3;
+<<<<<<< HEAD
+            Speed = (decimal)5;
+
+>>>>>>> fd310086affb447fbc6d5508f1518c4004f859a1
 
             ISMoving = false;
           
